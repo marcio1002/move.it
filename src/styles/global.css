@@ -1,0 +1,48 @@
+:root {
+  --white: #ffffff;
+  --dark: #333333;
+  --background: var(--dark);
+  --gray-line: #eeeeee;
+  --purple: #954AF4;
+  --purple-dark: #7e2fdd;
+  --text: #666666;
+  --text-highlight: #B3B9FF;
+  --title: #2E384D;
+  --red: #E8375B;
+  --green: #78FF00;
+  --blue: #5965E0;
+  --blue-dark: #543DD4;
+  --blue-twitter: #2AA9E0;
+}
+
+@media(max-width: 1088px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media(max-width: 780px) {
+  html {
+    font-size:  87.5%;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+body, input, textarea, button {
+  font: 400 1rem 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+}
