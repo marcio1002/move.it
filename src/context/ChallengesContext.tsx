@@ -1,6 +1,9 @@
+//componentes
 import { createContext, useState } from 'react'
-import challenges from '../../challenges.json'
 import { ChallengesProviderProps, ChallengesContextProps } from '../contracts/Challenges'
+
+// api simulation
+import challenges from '../../challenges.json'
 
 export const ChallengesContext = createContext({} as ChallengesContextProps)
 

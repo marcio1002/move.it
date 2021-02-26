@@ -1,5 +1,8 @@
+//componentes
 import { useState, useEffect, useContext } from 'react'
-import { ChallengesContext } from '../../context/ChallengesContext';
+import { ChallengesContext } from '../../context/ChallengesContext'
+
+//css
 import styles from './Countdown.module.css'
 
 export const CountDown = () => {
@@ -56,7 +59,7 @@ export const CountDown = () => {
         hasFinish ? (
           <button
             disabled
-            className={`${styles.countDownButton}`}
+            className={styles.countDownButton}
           >
             Ciclo encerrado
           </button>

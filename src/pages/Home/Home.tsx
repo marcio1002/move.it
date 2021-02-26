@@ -10,7 +10,7 @@ import { Profile } from '../../components/Profile/Profile'
 // Styles CSS
 import styles from './Home.module.css'
 
-export default function Home() {
+const Home = () => {
   return (
     <div className={styles.container} >
       <Head>
@@ -33,3 +33,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

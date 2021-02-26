@@ -1,5 +1,8 @@
+//componentes
 import { useContext } from 'react'
 import { ChallengesContext } from '../../context/ChallengesContext'
+
+//css
 import styles from './CompletedChallenges.module.css'
 
 export const CompletedChallenges = () => {
