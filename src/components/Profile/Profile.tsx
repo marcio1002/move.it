@@ -1,7 +1,7 @@
 //css
 import styles from './Profile.module.css'
 
-export function Profile() {
+export const Profile = () => {
   return (
     <div className={styles.profileContainer} >
       <img src="https://github.com/marcio1002.png"/>

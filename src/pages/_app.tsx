@@ -1,8 +1,10 @@
-import '../styles/global.css'
-
+//componentes
 import { ChallengesProvider } from '../context/ChallengesContext'
 
-export default function App({ Component, pageProps }) {
+//css
+import '../styles/global.css'
+
+const App = ({ Component, pageProps }) => {
   return (
     <ChallengesProvider>
       <Component {...pageProps} />
@@ -10,4 +12,4 @@ export default function App({ Component, pageProps }) {
   )
 }
 
-
+export default App
