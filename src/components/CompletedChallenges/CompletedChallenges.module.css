@@ -1,15 +1,3 @@
-@media(max-width: 1088px) {
-  .completedChallenges {
-    transform: translateX(-0.5rem);
-  }
-}
-
-@media(max-width: 780px) {
-  .completedChallenges {
-    transform: translateX(-0.5rem);
-  }
-}
-
 .completedChallenges {
   display: flex;
   align-items: center;

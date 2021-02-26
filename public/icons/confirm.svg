@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Checkbox Confirm Circle</title>
+  <desc>A color styled icon from Orion Icon Library.</desc>
+  <circle data-name="layer1"
+  cx="28" cy="36" r="26" fill="#3af23a"></circle>
+  <path data-name="opacity" d="M31.467 58.533A25.999 25.999 0 0 1 11.43 15.964 26 26 0 1 0 48.036 52.57a25.89 25.89 0 0 1-16.57 5.964z"
+  fill="#000028" opacity=".15"></path>
+  <path data-name="stroke" fill="none" stroke="#2c4777" stroke-linecap="round"
+  stroke-linejoin="round" stroke-width="2" d="M15.74 30l12 14 34-42"></path>
+  <path data-name="stroke" d="M53.443 32A26.002 26.002 0 1 1 27.75 10a25.914 25.914 0 0 1 10 1.993"
+  fill="none" stroke="#2c4777" stroke-linecap="round" stroke-linejoin="round"
+  stroke-width="2"></path>
+</svg>

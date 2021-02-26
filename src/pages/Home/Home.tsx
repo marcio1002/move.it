@@ -1,5 +1,7 @@
-// components
 import Head from 'next/head'
+
+// components
+import { ChallengeBox } from '../../components/ChallengeBox/ChallengeBox'
 import { CompletedChallenges } from '../../components/CompletedChallenges/CompletedChallenges'
 import { CountDown } from '../../components/Countdown/Countdown'
 import { ExperienceBar } from '../../components/ExperienceBar/ExperienceBar'
@@ -13,17 +15,19 @@ export default function Home() {
     <div className={styles.container} >
       <Head>
         <title>Inicio | Move.it</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=7" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       </Head>
       <ExperienceBar />
-
       <section>
-        <div>
+        <div className={styles.containerActionProfile} >
           <Profile />
           <CompletedChallenges />
           <CountDown />
         </div>
-        <div>
-
+        <div className={styles.containerChallenge}>
+          <ChallengeBox />
         </div>
       </section>
     </div>
