@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Strategy</title>
+  <desc>A color styled icon from Orion Icon Library.</desc>
+  <circle data-name="layer1"
+  cx="29.5" cy="29.5" r="27.5" fill="#f24a47"></circle>
+  <circle data-name="layer1" cx="29.5" cy="29.5" r="16" fill="#f24a47"></circle>
+  <circle data-name="layer2" cx="29.5" cy="29.5" r="16" fill="#d2e1ff"></circle>
+  <path data-name="layer2" d="M33.5 29.5a4 4 0 1 1-4-4 4 4 0 0 1 4 4z"
+  fill="#d2e1ff"></path>
+  <path data-name="opacity" d="M57 29.5H45.5a16 16 0 0 1-16 16V57A27.5 27.5 0 0 0 57 29.5z"
+  fill="#fff" opacity=".5"></path>
+  <path data-name="opacity" d="M33.5 29.5a4 4 0 0 1-4 4v12a16 16 0 0 0 16-16h-12z"
+  fill="#fff" opacity=".5"></path>
+  <path data-name="layer1" d="M29.5 25.5a4 4 0 1 0 4 4 4 4 0 0 0-4-4z"
+  fill="#f24a47"></path>
+  <path data-name="stroke" d="M29.5 57A27.5 27.5 0 1 1 57 29.5m-27.5 16a16 16 0 1 1 16-16"
+  fill="none" stroke="#243b65" stroke-linecap="round" stroke-linejoin="round"
+  stroke-width="2"></path>
+  <circle data-name="stroke" cx="29.5" cy="29.5" r="4" fill="none"
+  stroke="#243b65" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+  <path data-name="stroke" fill="none" stroke="#243b65" stroke-linecap="round"
+  stroke-linejoin="round" stroke-width="2" d="M62 62L37.9 37.9m17.3 1.6l-17.3-1.6 1.4 17.4"></path>
+</svg>

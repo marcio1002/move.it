@@ -99,7 +99,12 @@
   transition: background .2s ease-in-out, filter .4s ease-in-out;
 }
 
-.countDownButton:focus,.countDownButton:active, .countDownButton:focus-visible, .countDownButton:visited {
-  text-decoration: none;
-  border: none;
+.countDownButton:focus,
+.countDownButton:active, 
+.countDownButton:focus-visible, 
+.countDownButton:visited
+.countDownButton:focus  .countDownButton::-moz-focus-inner {
+  text-decoration: none !important;
+  border: none !important;
+  
 }

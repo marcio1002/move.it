@@ -1,5 +1,5 @@
 //componentes
-import { ChallengesProvider } from '../context/ChallengesContext'
+import { ChallengesProvider } from 'App/context/ChallengesContext'
 
 //css
 import '../styles/global.css'
@@ -7,7 +7,7 @@ import '../styles/global.css'
 const App = ({ Component, pageProps }) => {
   return (
     <ChallengesProvider>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </ChallengesProvider>
   )
 }
