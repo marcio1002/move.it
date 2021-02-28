@@ -1,5 +1,12 @@
 import Head from 'next/head'
 
+//providers
+import { ChallengesProvider } from 'App/context/ChallengesContext'
+import { CountDownProvider } from 'App/context/CountDownContext'
+
+//typescript
+import { ChallengesProviderProps } from 'App/contracts/Challenges'
+
 // components
 import { ChallengeBox } from 'App/components/ChallengeBox/ChallengeBox'
 import { CompletedChallenges } from 'App/components/CompletedChallenges/CompletedChallenges'
@@ -9,10 +16,10 @@ import { Profile } from 'App/components/Profile/Profile'
 
 // Styles CSS
 import styles from './Home.module.css'
-import { CountDownProvider } from 'App/context/CountDownContext'
 
-const Home = () => {
-  return (
+
+const Home = (props: ChallengesProviderProps) => (
+  <ChallengesProvider { ...props } >
     <div className={styles.container} >
       <Head>
         <title>Inicio | Move.it</title>
@@ -20,6 +27,7 @@ const Home = () => {
         <meta httpEquiv="X-UA-Compatible" content="IE=7" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
       </Head>
+
       <ExperienceBar />
 
       <CountDownProvider>
@@ -35,7 +43,7 @@ const Home = () => {
         </section>
       </CountDownProvider>
     </div>
-  )
-}
+  </ChallengesProvider>
+)
 
 export default Home

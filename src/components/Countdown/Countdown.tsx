@@ -50,6 +50,7 @@ export const CountDown = () => {
                 onClick={resetCountDown}
               >
                 Abandonar ciclo
+                <img src="icons/close.svg"/>
               </button>
             ) : (
                 <button
@@ -58,6 +59,7 @@ export const CountDown = () => {
                   onClick={startCountDown}
                 >
                   Iniciar ciclo
+                  <img className={styles.play} src="icons/play.svg"/>
                 </button>
               )
             }

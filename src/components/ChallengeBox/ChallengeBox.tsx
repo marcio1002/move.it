@@ -8,7 +8,7 @@ import styles from './ChallengeBox.module.css'
 
 export const ChallengeBox = () => {
 
-  const { challengeContent, resetChallenge, completeChallenge } = useContext(ChallengesContext)
+  const { challengesContent, resetChallenge, completeChallenge } = useContext(ChallengesContext)
   const { resetCountDown } = useContext(CountDownContext)
 
 
@@ -26,14 +26,14 @@ export const ChallengeBox = () => {
   return (
     <div className={styles.challengeBoxContainer} >
       {
-        challengeContent ? (
+        challengesContent ? (
           <div className={styles.challengeBoxActive} >
-            <header>Ganhe {challengeContent.amount ?? "sdfds"} xp</header>
+            <header>Ganhe {challengesContent.amount} xp</header>
 
             <main>
-              <img src={`icons/${challengeContent.type ?? "eye"}.svg`}/>
+              <img src={`icons/${challengesContent.type}.svg`}/>
                 <strong>Novo desafio</strong>
-                <p>{challengeContent.description ?? "sddsfd"}</p>
+                <p>{challengesContent.description}</p>
             </main>
 
             <footer>

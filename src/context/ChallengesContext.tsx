@@ -1,55 +1,71 @@
 //componentes
 import { createContext, useEffect, useState } from 'react'
-import { ChallengesContextProps, ChallengesProviderProps,  challenge } from 'App/contracts/Challenges'
+import Cookies from 'js-cookie'
+
+import { ChallengesContextProps, ChallengesProviderProps,  challengeProps } from 'App/contracts/Challenges'
+import { LevelUpModal } from 'App/components/LevelUpModal/LevelUpModal'
 
 // api simulation
 import challenges from '../../challenges.json'
 
 export const ChallengesContext = createContext({} as ChallengesContextProps)
 
-export const ChallengesProvider = ({ children }: ChallengesProviderProps) => {
-  const [level, setLevel] = useState(1)
-  const [currentExperience, setCurrentExperience] = useState(0)
-  const [challengesCompleted, setChallengesCompleted] = useState(0)
-  const [challengeContent, setChallengeContent] = useState(null)
+export const ChallengesProvider = ({ children, ...props }: ChallengesProviderProps) => {
+  const [level, setLevel] = useState(props.level ?? 1)
+  const [currentExperience, setCurrentExperience] = useState(props.currentExperience ?? 0)
+  const [challengesCompleted, setChallengesCompleted] = useState(props.challengesCompleted ?? 0)
+  const [challengesContent, setChallengesContent] = useState(null)
+  const [isLevelUpModal, setIsLevelUpModal] = useState(false)
 
 
   useEffect(() => {
-    setChallengeContent(null)
+    setChallengesContent(null)
 
-    if('Notification' in window) Notification.requestPermission()
+    if('Notification' in window && 
+        Notification.permission == "default"
+      ) 
+        Notification.requestPermission()
   },[])
+
+  useEffect(() => {
+    Cookies.set("level", String(level))
+    Cookies.set("currentExperience", String(currentExperience))
+    Cookies.set("challengesCompleted", String(challengesCompleted))
+
+  }, [level, currentExperience, challengesCompleted])
 
   const experienceNextLevel = Math.pow((level + 1) * 4, 2)
 
-  const levelUp = () => setLevel(level + 1)
+  const levelUp = () => {
+    setLevel(level + 1)
+    setIsLevelUpModal(true)
+  }
+
+  const closeLevelUpModal = () => setIsLevelUpModal(false)
 
   const startNewChallenge = () => {
     const challenge = challenges[Math.floor( Math.random() * challenges.length)]
     
-    
-    if(Notification.permission == "granted") {
-      if('Audio' in window)
-        new Audio('/notification.mp3').play()
+    if(!document.hasFocus() && Notification?.permission == "granted") {
 
-      let notification = new Notification("🎁 Novo desafio 🎉", {
+      if('Audio' in window) new Audio('/notification.mp3').play();
+
+      (new Notification("🎁 Novo desafio 🎉", {
         body: `Valendo ${challenge.amount}xp `,
-        icon: 'icons/strategy.svg',
+        icon: 'favicon.png',
         requireInteraction: true,
         vibrate: [200,200,200]
-      })
-
-      notification.onclick = () => focus()
+      })) .onclick = () => focus()
     }
-    setChallengeContent(challenge)
+    setChallengesContent(challenge)
   }
 
-  const resetChallenge = () => setChallengeContent(null)
+  const resetChallenge = () => setChallengesContent(null)
 
   const completeChallenge = () => {
-    if(!challengeContent) return
+    if(!challengesContent) return
 
-    const { amount }: challenge = challengeContent
+    const { amount }: challengeProps = challengesContent
 
     let finalExperience = currentExperience + amount
 
@@ -59,7 +75,7 @@ export const ChallengesProvider = ({ children }: ChallengesProviderProps) => {
     }
 
     setCurrentExperience(finalExperience)
-    setChallengeContent(null)
+    setChallengesContent(null)
     setChallengesCompleted(challengesCompleted + 1)
   }
 
@@ -70,14 +86,16 @@ export const ChallengesProvider = ({ children }: ChallengesProviderProps) => {
     experienceNextLevel,
     levelUp,
     startNewChallenge,
-    challengeContent,
+    challengesContent,
     resetChallenge,
-    completeChallenge
+    completeChallenge,
+    closeLevelUpModal
   }
 
   return (
     <ChallengesContext.Provider value={contextProps} >
-      { children}
+      { children }
+      { isLevelUpModal &&  <LevelUpModal />}
     </ChallengesContext.Provider>
   )
 }
